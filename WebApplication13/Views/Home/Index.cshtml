@@ -1,0 +1,23 @@
+﻿@model DisplaySelectViewModel
+
+
+<div style="height: 70vh;" class="row justify-content-center align-items-center">
+    <div class="col-md-6 jumbotron">
+        <form action="/home/submitselect" method="post">
+            <select name="id" class="form-control form-control-lg">
+                @foreach (SelectColor color in Model.Colors)
+                {
+                    if (color.Id == 2)
+                    {
+                        <option selected value="@color.Id">@color.Color</option>
+                    }
+                    else
+                    {
+                        <option value="@color.Id">@color.Color</option>
+                    }
+                }
+            </select>
+            <button class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</div>
